@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Collection</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="contact.html">
+    <link rel="stylesheet" href="about.html">
+    <link rel="shortcut icon" href="nike1-removebg-preview.png" type="image/x-icon">
+    
+  </head>
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+ 
+     background: linear-gradient(
+    45deg,
+    #006888 0%,
+    #8969ff 10%,
+    #00fff2 20%,
+    #495874 30%,
+    #3fdad8 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    #5f15f2 70%,
+    #002c8a 80%,
+    #3903cc 90%,
+    #6d7af0 100%
+);
+background-size: 200% 200%;
+animation: rainbow 18s ease infinite;
+@keyframes rainbow { 
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 25% }
+    100% { background-position: 0% 50% }
+} 
+    }
+
+
+    
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 55px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-image: linear-gradient(135deg, #001c68 0%, #4D376D 100%,0.7);
+    /* position: fixed; */
+  }
+
+.logo img {
+    height: 60px;
+}
+
+.company-name {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 3px; 
+    font-family: 'Bree Serif', serif;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Bree Serif', serif;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #B9ADCF;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: linear-gradient(135deg, #6f8ee2 25%, #4D376D 100%); */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px gray;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.brand {
+    font-size: 8rem;
+    font-weight: bold;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+    font-family: 'Bree Serif', serif;
+    color: #0066ff;
+    letter-spacing: 8px;
+    text-shadow:
+     0px 0px 5px #9cc7ff,
+     0px 0px 10px #0470fd,
+     0px 0px 20px #0470fd,
+     0px 0px 40px #0470fd
+     ;
+}
+
+.slogan {
+    font-size: 2rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    font-family: 'Bree Serif', serif;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.background-shoes {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.shoe {
+    position: absolute;
+    max-width: 50%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.left-shoe {
+    top: 10%;
+    left: 0;
+    transform: rotate(-15deg);
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.7));
+    animation: rotateShoe 20s linear infinite;
+}
+
+.right-shoe {
+    bottom: 10%;
+    right: 0;
+    transform: rotate(15deg);
+    -webkit-box-reflect: above 0px linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.7));
+    animation: rotateShoe 20s linear infinite reverse;
+}
+
+@keyframes rotateShoe {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInDown {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.product-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.product-showcase h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: linear-gradient(135deg, #f5f7fa 20%, #265daa 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h2 {
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: #333;
+}
+
+.product-card .description {
+    font-size: 0.9rem;
+    margin: 0 1rem 1rem;
+    color: #666;
+}
+
+.price-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #e44d26;
+}
+
+.rating {
+    color: #ffc107;
+}
+
+.buy-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #555;
+}
+
+.nike-collections {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 30px;
+}
+
+.nike-collections h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.collections-grid {
+    display: grid;
+    /* grid-template-columns: 1fr, 1fr , 1fr , 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.collection-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/*  */
+.nike-collections {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 30px;
+}
+
+.nike-collections h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* This creates 4 equal-width columns */
+    gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.collection-card {
+    /* Other styles remain the same */
+    width: 100%; /* Ensure the card takes full width of its grid cell */
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 1200px) {
+    .collections-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for even smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .collections-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+/*  */
+
+.collection-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.collection-card:hover {
+    transform: translateY(-5px);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+   .card-content{
+    padding: 20px;
+    background: linear-gradient(135deg, #e6f2ff 0%, #f0f8ff 100%);
+  
+}
+
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.card-description {
+    margin: 0;
+    color: #666;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.explore-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #f85606;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #e04d05;
+}
+
+.social-integration {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+   
+
+background: linear-gradient(
+    45deg,
+    #ff0000 0%,
+    #ff9a00 10%,
+    #d0de21 20%,
+    #4fdc4a 30%,
+    #3fdad8 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    #5f15f2 70%,
+    #ba0cf8 80%,
+    #fb07d9 90%,
+    #ff0000 100%
+);
+background-size: 200% 200%;
+animation: rainbow 18s ease infinite;
+}
+@keyframes rainbow { 
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 25% }
+    100% { background-position: 0% 50% }
+} 
+
+.social-integration h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.share-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.share-button:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.share-button.facebook { background-color: #3b5998; }
+.share-button.facebook:before { background-image: url('fac11.png'); }
+
+.share-button.twitter { background-color: #1da1f2; }
+.share-button.twitter:before { background-image: url('pngwing.com (1).png'); }
+
+.share-button.instagram { background-color: #e1306c; }
+.share-button.instagram:before { background-image: url('pngwing.com.png'); }
+
+.share-button:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.social-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    
+  }
+  
+  .social-post {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.social-post:hover {
+    transform: translateY(-5px);
+}
+
+.social-post img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.social-post-content {
+    padding: 20px;
+}
+
+.social-post-content p {
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.4;
+}
+
+.social-post-content .date {
+    font-size: 0.9em;
+    color: #888;
+    font-style: italic;
+}
+
+.cta-section {
+    display: flex;
+    margin: 60px auto;
+    max-width: 1200px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} 
+
+.cta-content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    background: linear-gradient(to left, #4ca1af, #c4e0e5);
+}
+
+.cta-content h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#newsletter-form {
+    display: flex;
+    max-width: 400px;
+}
+
+#newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+}
+
+#newsletter-form button {
+    padding: 12px 24px;
+    background-color: #f85606;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#newsletter-form button:hover {
+    background-color: #e04d05;
+}
+
+.cta-image {
+    flex: 1;
+    background-image: url('nike10.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.animated-footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 50px 0 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-footer.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-footer.animate .footer-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #f85606;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #f85606;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        flex-direction: column;
+    }
+    
+    .cta-image {
+        height: 200px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-out forwards;
+}
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo (3).png" alt="Logo" />
+      </div>
+      <div class="company-name">Nike Collection</div>
+      <div class="menu">
+        <a href="#mainpage">Home</a>
+        <a target="_blank" href="about.html">About</a>
+        <a href="#foot">Services</a>
+        <a target="_blank" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main id="mianpage" class="hero">
+      <div class="background-shoes">
+        <img src="nike1-removebg-preview.png" alt="Nike Shoe" class="shoe left-shoe" />
+        <img src="nike1-removebg-preview.png" alt="Nike Shoe" class="shoe right-shoe" />
+      </div>
+      <div class="hero-content">
+        <h1 class="brand">NIKE</h1>
+        <p class="slogan">Just Do It</p>
+        <a href="#" class="cta-button">Shop Now</a>
+      </div>
+    </main>
+
+    <main class="product-showcase">
+        <h1>Featured Nike Shoes</h1>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="nike2.avif" alt="Nike Air Max 270" />
+            <h2>Nike Air Max 270</h2>
+            <p class="description">
+              Experience unrivaled comfort with the Air Max 270, featuring our
+              largest Air unit yet.
+            </p>
+            <div class="price-rating">
+              <span class="price">$150</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+  
+          <div class="product-card">
+            <img src="nike3.avif" alt="Nike React Infinity Run" />
+            <h2>Nike React Infinity Run</h2>
+            <p class="description">
+              Designed to help reduce injury and keep you on the run with
+              responsive foam and Flyknit upper.
+            </p>
+            <div class="price-rating">
+              <span class="price">$160</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+  
+          <div class="product-card">
+            <img src="nike4.avif" alt="Nike ZoomX Vaporfly NEXT%" />
+            <h2>Nike ZoomX Vaporfly NEXT%</h2>
+            <p class="description">
+              Our fastest shoe, engineered to help you break your personal
+              records.
+            </p>
+            <div class="price-rating">
+              <span class="price">$250</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+  
+          <div class="product-card">
+            <img src="nike5.avif" alt="Nike Air Force 1 '07" />
+            <h2>Nike Air Force 1 '07</h2>
+            <p class="description">
+              The iconic street style sneaker, reimagined for modern comfort while
+              keeping its classic look.
+            </p>
+            <div class="price-rating">
+              <span class="price">$90</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="nike6.avif" alt="Nike Air Force 1 '07" />
+            <h2>Nike Air Force 1 '07</h2>
+            <p class="description">
+              The iconic street style sneaker, reimagined for modern comfort while
+              keeping its classic look.
+            </p>
+            <div class="price-rating">
+              <span class="price">$90</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="nike7.jpg" alt="Nike Air Force 1 '07" />
+            <h2>Nike Air Force 1 '07</h2>
+            <p class="description">
+              The iconic street style sneaker, reimagined for modern comfort while
+              keeping its classic look.
+            </p>
+            <div class="price-rating">
+              <span class="price">$90</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="nike8.avif" alt="Nike Air Force 1 '07" />
+            <h2>Nike Air Force 1 '07</h2>
+            <p class="description">
+              The iconic street style sneaker, reimagined for modern comfort while
+              keeping its classic look.
+            </p>
+            <div class="price-rating">
+              <span class="price">$90</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="nike9.avif" alt="Nike Air Force 1 '07" />
+            <h2>Nike Air Force 1 '07</h2>
+            <p class="description">
+              The iconic street style sneaker, reimagined for modern comfort while
+              keeping its classic look.
+            </p>
+            <div class="price-rating">
+              <span class="price">$90</span>
+              <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+            </div>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </main>
+  
+     <!--  -->
+    
+
+    <section class="nike-collections">
+      <h2>Nike Collections</h2>
+      <div class="collections-grid" id="collectionGrid">
+        <!-- Collections will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <section class="social-integration">
+      <h2>Connect with Nike</h2>
+      <div class="share-buttons"></div>
+      <div class="social-feed">
+        <!-- Social media posts will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <section class="cta-section animate-on-scroll slide-in-right">
+      <div class="cta-content">
+        <h2>Stay Ahead of the Game</h2>
+        <p>Get exclusive offers, early access to new releases, and personalized recommendations.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Join Us</button>
+        </form>
+      </div>
+      <div class="cta-image">
+        <!-- We'll use a background image in CSS -->
+      </div>
+    </section>
+
+    <footer id="foot" class="animated-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Customise</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>About Nike</h3>
+          <ul>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">TW</a>
+            <a href="#" class="social-icon">IG</a>
+            <a href="#" class="social-icon">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Nike, Inc. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.hero');
+    const brand = document.querySelector('.brand');
+
+    hero.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { width, height } = hero.getBoundingClientRect();
+        
+        const moveX = (clientX / width - 0.5) * 20;
+        const moveY = (clientY / height - 0.5) * 20;
+
+        brand.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    // Collections data
+    const collections = [
+        {
+            name: "Air Max",
+            image: "LEBRON+TR+1.jpeg",
+            description: "Featuring visible Air cushioning for maximum comfort and style.",
+            link: "#air-max"
+        },
+        {
+            name: "Jordan",
+            image: "nike1.png", 
+            description: "Iconic basketball shoes and apparel inspired by Michael Jordan.",
+            link: "#jordan"
+        },
+        {
+            name: "Nike+",
+            image: "nike+.jpeg",
+            description: "Smart footwear and accessories for the tech-savvy athlete.",
+            link: "#nike-plus"
+        },
+        {
+            name: "Running",
+            image: "running.jpeg",
+            description: "High-performance shoes and gear for runners of all levels.",
+            link: "#running"
+        },
+        {
+            name: "Nike CR7",
+            image: "cr7.jpeg",
+            description: "Signature collection inspired by Cristiano Ronaldo.",
+            link: "#cr7"
+        },
+        {
+            name: "Nike Golf",
+            image: "nikess.jpeg",
+            description: "Premium golf gear for precision and performance.",
+            link: "#golf"
+        },
+        {
+            name: "Sneakers",
+            image: "nike s2.jpeg",
+            description: "Trendy and comfortable sneakers for everyday wear.",
+            link: "#sneakers"
+        },
+        {
+            name: "Basketball", 
+            image: "bask.jpeg",
+            description: "Shoes and apparel designed for peak performance on the court.",
+            link: "#basketball"
+        }
+    ];
+
+    function createCollectionCard(collection, index) {
+        const card = document.createElement('div');
+        card.className = 'collection-card';
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.innerHTML = `
+            <img src="${collection.image}" alt="${collection.name}" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">${collection.name}</h2>
+                <p class="card-description">${collection.description}</p>
+                <a href="${collection.link}" class="explore-button">Explore</a>
+            </div>
+        `;
+        
+        return card;
+    }
+
+    function insertCollectionCards() {
+        const grid = document.getElementById('collectionGrid');
+        if (grid) {
+            collections.forEach((collection, index) => {
+                const card = createCollectionCard(collection, index);
+                grid.appendChild(card);
+                void card.offsetWidth; // Trigger reflow
+                card.classList.add('animate-on-scroll', 'slide-in-up');
+            });
+        }
+    }
+
+    insertCollectionCards();
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            console.log(`Newsletter signup for: ${email}`);
+            alert('Thank you for signing up!');
+            e.target.reset();
+        });
+    }
+
+    // Social sharing functionality
+    function createShareButtons() {
+        const shareContainer = document.querySelector('.share-buttons');
+        if (!shareContainer) return;
+
+        const networks = [
+            { name: 'Facebook', color: '#3b5998' },
+            { name: 'Twitter', color: '#1da1f2' },
+            { name: 'Instagram', color: '#e1306c' }
+        ];
+
+        networks.forEach(network => {
+            const button = document.createElement('button');
+            button.className = `share-button ${network.name.toLowerCase()}`;
+            button.textContent = `Share on ${network.name}`;
+            button.addEventListener('click', () => shareContent(network.name));
+            shareContainer.appendChild(button);
+        });
+    }
+
+    function shareContent(network) {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent("Check out these amazing Nike collections!");
+        let shareUrl;
+
+        switch(network) {
+            case 'Facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case 'Twitter':
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                break;
+            case 'Instagram':
+                alert("Instagram sharing is not directly supported. You can copy the link and share it manually.");
+                return;
+        }
+
+        window.open(shareUrl, '_blank');
+    }
+
+    createShareButtons();
+
+    // Mock social posts
+    function fetchSocialPosts() {
+        const feedContainer = document.querySelector('.social-feed');
+        if (!feedContainer) return;
+        
+        const mockPosts = [
+            { image: 'release.png', content: 'New Air Max release!', date: '2023-06-01' },
+            { image: 'summer.png', content: 'Summer collection now available', date: '2023-05-28' },
+            { image: 'nike3bgf.png', content: 'Nike+ app update', date: '2023-05-25' },
+        ];
+
+        mockPosts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.className = 'social-post';
+            postElement.innerHTML = `
+                <img src="${post.image}" alt="Nike social post">
+                <div class="social-post-content">
+                    <p>${post.content}</p>
+                    <p class="date">${post.date}</p>
+                </div>
+            `;
+            feedContainer.appendChild(postElement);
+        });
+    }
+
+    fetchSocialPosts();
+
+    // Scroll animations
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScrollAnimations() {
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            if (isInViewport(element)) {
+                element.classList.add('fade-in');
+            }
+        });
+
+        document.querySelectorAll('.collection-card').forEach((card) => {
+            if (isInViewport(card)) {
+                card.classList.add('animate');
+            }
+        });
+    }
+
+    handleScrollAnimations();
+    window.addEventListener('scroll', handleScrollAnimations);
+
+    // Footer animation
+    const footer = document.querySelector('.animated-footer');
+    const footerSections = document.querySelectorAll('.footer-section');
+
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                footer.classList.add('animate');
+                footerSections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.style.transitionDelay = `${index * 0.1}s`;
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, 100);
+                });
+                footerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    if (footer) {
+        footerObserver.observe(footer);
+    }
+});   
+    </script>
+  </body>
+</html>
